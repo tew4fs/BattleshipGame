@@ -1,16 +1,18 @@
 import java.util.ArrayList;
 public class AIBoard {
 
-	char [][] AIBoard = new char [10][10];
+	char [][] AIBoard;
 	public int k, b, c, s, d;
-	private boolean shipSunk = false;
+	private boolean shipSunk;
 	
 	public AIBoard() {
+		AIBoard = new char [10][10];
 		k = 5;
 		b = 4;
 		c = 3;
 		s = 3;
 		d = 2;
+		shipSunk = false;
 		createBoard();
 	}
 	
@@ -147,11 +149,6 @@ public class AIBoard {
 			str = str + "\n";
 		}
 		return str;
-	}
-	
-	public static void main(String [] args) {
-		AIBoard board = new AIBoard();
-		System.out.println(board);
 	}
 	
 }

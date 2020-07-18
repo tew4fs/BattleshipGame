@@ -1,5 +1,3 @@
-
-//Amanuel & Trevor & Harry
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -9,9 +7,7 @@ import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
 import java.io.IOException;
 import java.net.URL;
-
 import javax.swing.*;
-
 public class Window extends JPanel {
 	/**
 	 * 
@@ -19,20 +15,18 @@ public class Window extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private final int WIDTH = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
 	private final int HEIGHT = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
+	private final boolean ANIMATION = true;
 
-	private boolean onStartScreen, onShipSelectionScreen, onPlayScreen;
+	private boolean onStartScreen, onShipSelectionScreen, onPlayScreen, initHomeScreen, initSelectionScreen, initPlayScreen;
+	private float musicVolume;
 	private StartScreenPanel startScreen;
 	private GridPanel selectionScreen;
 	private PlayPanel playScreen;
-	private boolean initHomeScreen, initSelectionScreen, initPlayScreen;
 	private BufferedImage carrier0, carrier1, carrier2, carrier3, battleship0, battleship1, battleship2, battleship3, cruiser0, cruiser1, cruiser2, cruiser3, submarine0, submarine1, submarine2, submarine3, destroyer0, destroyer1, destroyer2, destroyer3;
 	private BufferedImage water0, water1, water2, water3, water4, water5, water6, water7, water8, water9, island0;
-	private BufferedImage[] shipSprites = new BufferedImage[20];
-	private BufferedImage[] waterSprites = new BufferedImage[11];
+	private BufferedImage[] shipSprites, waterSprites;
 	private MusicPlayer musicPlayer;
-	private float musicVolume;
-	private int count;
-
+	
 	public Window() {
 		super();
 		this.setLayout(null);
@@ -40,14 +34,18 @@ public class Window extends JPanel {
 		this.setPreferredSize(new Dimension(WIDTH, HEIGHT));
 		this.setBackground(new Color(6, 9, 199));
 		this.setVisible(true);
-		count = 0;
+		
 		onStartScreen = false;
 		onShipSelectionScreen = false;
 		onPlayScreen = false;
 		initHomeScreen = false;
 		initSelectionScreen = false;
 		initPlayScreen = false;
+		onStartScreen = true;
+		shipSprites = new BufferedImage[20];
+		waterSprites = new BufferedImage[11];
 		musicVolume = (float) 0.7;
+		
 		try{ 
 			URL url = this.getClass().getResource("ActionMusic.wav");
 			musicPlayer = new MusicPlayer(url); 
@@ -55,17 +53,8 @@ public class Window extends JPanel {
 		} 
 		catch (Exception ex) {  }
 		initSprites(); 
-		initializeStartScreen(true);
-		onStartScreen = true;
+		initializeStartScreen(ANIMATION);
 		this.getVolume();
-	}
-	
-	public int getCount() {
-		return count;
-	}
-	
-	public void setCount(int c) {
-		count = c;
 	}
 	
 	private void getVolume() {
@@ -159,10 +148,7 @@ public class Window extends JPanel {
 			waterSprites[8] = water8;
 			waterSprites[9] = water9;
 			waterSprites[10] = island0;
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		} catch (IOException e) {}
 	}
 	
 	public void goToStartScreen() {
@@ -298,10 +284,6 @@ public class Window extends JPanel {
 		playScreen.grabFocus();
 		initPlayScreen = true;
 		initPlayScreenThread();
-	}
-
-	public void addComponent(JComponent e) {
-		this.add(e);
 	}
 
 	public static void main(String[] args) {

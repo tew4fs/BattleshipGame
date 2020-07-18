@@ -147,6 +147,12 @@ public class StartScreenPanel extends JPanel implements MouseListener{
 	// -- End of Settings Configuration --
 	
 	// -- Start of Foreground Configuration --
+	public void addListeners() {
+		play.addMouseListener(SS);
+		settingsLabel.addMouseListener(SS);
+		quit.addMouseListener(SS);
+	}
+	
 	public void setShips() {
 		carrier = new ShipPanel('K', shipSprites);
 		cruiser = new ShipPanel('C', shipSprites);
@@ -232,7 +238,8 @@ public class StartScreenPanel extends JPanel implements MouseListener{
 		explosions[8].setBounds(CRUISERX+9, CRUISERY + CELLSIZE + 20, 25, 25);
 		explosions[9].setBounds(CRUISERX+24, CRUISERY + CELLSIZE - 3, 25, 25);
 		
-		Timer timer = new Timer(1, new ActionListener() {
+		Timer timer = new Timer(1, null);
+		timer.addActionListener(new ActionListener() {
 			int gravity = 1;
 			int Vy_0 = 5;
 			int time = 0;
@@ -311,9 +318,8 @@ public class StartScreenPanel extends JPanel implements MouseListener{
 						settingsLabel.setForeground(new Color(255, 255, 255, opacity));
 						quit.setForeground(new Color(255, 255, 255, opacity));
 					}else {
-						play.addMouseListener(SS);
-						settingsLabel.addMouseListener(SS);
-						quit.addMouseListener(SS);
+						addListeners();
+						timer.stop();
 					}
 				}
 			}
@@ -455,9 +461,7 @@ public class StartScreenPanel extends JPanel implements MouseListener{
 				}else {
 					fade.setVisible(false);
 					if(!animation) {
-						play.addMouseListener(SS);
-						settingsLabel.addMouseListener(SS);
-						quit.addMouseListener(SS);
+						addListeners();
 					}
 					timer.stop();
 				}

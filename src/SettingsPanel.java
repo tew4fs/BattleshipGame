@@ -22,19 +22,23 @@ public class SettingsPanel extends JPanel implements MouseListener{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private final int HEIGHT = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight(); // Height of the screen
-	private final int WIDTH = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth(); // Width of the screen
-	private JPanel options, volumeOptions;
+	private final int HEIGHT = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
+	private final int WIDTH = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
+	
 	private boolean leave, returnToMenu;
-	private JLabel resume, settings, exit, exitGameLabel, yesButton, noButton, backButton, backButtonStartScreen, setVolumeLabel;
- 	private JSpinner spinner = new JSpinner();
-    private JSlider slider = new JSlider();
     private float volume;
+	private JPanel options, volumeOptions;
+	private JLabel resume, settings, exit, exitGameLabel, yesButton, noButton, backButton, backButtonStartScreen, setVolumeLabel;
+ 	private JSpinner spinner;
+    private JSlider slider;
+    
 	public SettingsPanel(float musicVolume) {
 		this.setBackground(new Color(0, 0, 0, 100));
 		this.setBounds(0, 0, WIDTH, HEIGHT);
 		this.setLayout(null);
 		volume = musicVolume;
+		spinner = new JSpinner();
+		slider = new JSlider();
 		
 		options = new JPanel();
 		leave = false;
@@ -107,6 +111,7 @@ public class SettingsPanel extends JPanel implements MouseListener{
 		
 		volumeOptions = new JPanel();
 		volumeOptions.setAlignmentX(CENTER_ALIGNMENT);
+		volumeOptions.setBackground(new Color(0, 0, 0, 0));
 	 	spinner = new JSpinner();
         slider = new JSlider();
         slider.setValue((int)(volume*100));

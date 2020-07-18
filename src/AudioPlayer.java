@@ -3,8 +3,7 @@
 import java.io.File; 
 import java.io.IOException;
 import java.net.URL;
-import java.util.Scanner; 
-
+//import java.util.Scanner; 
 import javax.sound.sampled.AudioInputStream; 
 import javax.sound.sampled.AudioSystem; 
 import javax.sound.sampled.Clip;
@@ -46,7 +45,7 @@ public class AudioPlayer {
 		//clip.loop(Clip.LOOP_CONTINUOUSLY); 
 	} 
 
-	public static void main(String[] args) 
+	/*public static void main(String[] args) 
 	{ 
 		try
 		{ 
@@ -110,7 +109,7 @@ public class AudioPlayer {
 	
 		} 
 	
-	} 
+	} */
 	
 	public void playOnce() {
 		clip.start();

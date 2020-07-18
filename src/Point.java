@@ -1,4 +1,3 @@
-
 public class Point {
 	private int row, col;
 	

@@ -1,7 +1,6 @@
 import java.io.IOException;
 import java.net.URL;
-import java.util.Scanner; 
-
+//import java.util.Scanner; 
 import javax.sound.sampled.AudioInputStream; 
 import javax.sound.sampled.AudioSystem; 
 import javax.sound.sampled.Clip;
@@ -41,7 +40,7 @@ public class MusicPlayer {
 		clip.loop(Clip.LOOP_CONTINUOUSLY); 
 	} 
 
-	public static void main(String[] args) 
+	/*public static void main(String[] args) 
 	{ 
 		try
 		{ 
@@ -74,11 +73,11 @@ public class MusicPlayer {
 			ex.printStackTrace(); 
 		
 		} 
-	} 
+	} */
 	
 	// Work as the user enters his choice 
 	
-	private void gotoChoice(int c) 
+	/*private void gotoChoice(int c) 
 			throws IOException, LineUnavailableException, UnsupportedAudioFileException 
 	{ 
 		switch (c) 
@@ -110,7 +109,7 @@ public class MusicPlayer {
 				break;
 		} 
 	
-	} 
+	} */
 	
 	public void changeVolume(float volume) {
 		FloatControl gainControl = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);

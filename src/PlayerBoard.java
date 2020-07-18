@@ -1,17 +1,19 @@
 import java.util.ArrayList;
 public class PlayerBoard {
 
-	char [][] playerBoard = new char [10][10];
+	char [][] playerBoard;
 	public int k, b, c, s, d;
-	private boolean shipSunk = false;
+	private boolean shipSunk;
 	
 	public PlayerBoard(char[][] grid) {
+		playerBoard = new char [10][10];
 		k = 5;
 		b = 4;
 		c = 3;
 		s = 3;
 		d = 2;
 		playerBoard = grid;
+		shipSunk = false;
 	}
 	
 	public ArrayList<Point> getOccupiedLocations(){
