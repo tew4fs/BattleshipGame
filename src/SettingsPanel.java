@@ -55,8 +55,8 @@ public class SettingsPanel extends JPanel implements MouseListener{
 		
 		BoxLayout layout = new BoxLayout(options, BoxLayout.PAGE_AXIS);
 		options.setBounds(WIDTH/2-100, HEIGHT/2 - 200, 200, 300);
-		options.setBackground(Color.white);
-		options.setBorder(new LineBorder(Color.yellow, 3));
+		options.setBackground(new Color(255, 255, 255));
+		options.setBorder(new LineBorder(new Color(0, 0, 0), 3));
 		options.setLayout(layout);
 		
 		resume.setFont(new Font("impact", Font.PLAIN, 30));

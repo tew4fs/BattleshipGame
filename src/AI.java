@@ -1,16 +1,11 @@
 import java.util.ArrayList;
 public class AI {
-	public PlayerBoard playerBoard;
-	//private char[][] playerBoard = player.getBoard();
 	private boolean randomGuess, afterFirstHit, afterSecondHit, afterThirdHit, afterFourthHit;
-	private ArrayList<Point> alreadyGuessed = new ArrayList<>(), misses = new ArrayList<>();
-	private Point originalHit = new Point();
-	private ArrayList<Integer> afterFirstHitCasesTried = new ArrayList<>();
-	private ArrayList<Integer> afterSecondHitCasesTried = new ArrayList<>();
-	private ArrayList<Integer> afterThirdHitCasesTried = new ArrayList<>();
-	private ArrayList<Integer> afterFourthHitCasesTried = new ArrayList<>();
-	private Point secondHit, thirdHit, fourthHit;
-	private int regionZeroRange = 25, regionOneRange = 25, regionTwoRange = 25, regionThreeRange = 25;
+	private int regionZeroRange, regionOneRange, regionTwoRange, regionThreeRange;
+	public PlayerBoard playerBoard;
+	private Point originalHit, secondHit, thirdHit, fourthHit;
+	private ArrayList<Point> alreadyGuessed, misses;
+	private ArrayList<Integer> afterFirstHitCasesTried, afterSecondHitCasesTried, afterThirdHitCasesTried, afterFourthHitCasesTried;
 	
 	public AI(PlayerBoard board) {
 		randomGuess = true;
@@ -18,7 +13,18 @@ public class AI {
 		afterSecondHit = false;
 		afterThirdHit = false;
 		afterFourthHit = false;
+		regionZeroRange = 25;
+		regionOneRange = 25;
+		regionTwoRange = 25;
+		regionThreeRange = 25;
 		playerBoard = board;
+		originalHit = new Point();
+		alreadyGuessed = new ArrayList<>();
+		misses = new ArrayList<>();
+		afterFirstHitCasesTried = new ArrayList<>();
+		afterSecondHitCasesTried = new ArrayList<>();
+		afterThirdHitCasesTried = new ArrayList<>();
+		afterFourthHitCasesTried = new ArrayList<>();
 	}
 	
 	public ArrayList<Point> getGuesses(){

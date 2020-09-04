@@ -27,13 +27,14 @@ public class GridPanel extends JPanel implements MouseListener, KeyListener {
 	private final int CELLSIZE = GRIDWIDTH/11;
 	private final int GRIDY = HEIGHT/2 - GRIDWIDTH/2 - CELLSIZE;
 	private final GridPanel GP = this;
+	private final Font messageFont = new Font("impact", Font.PLAIN, 24);
 	
 	private int shipWidth, shipHeight;
 	private boolean initMove, initWater, fadeOutComplete, changeToPlayBool, changeToMenuBool, inSettings; 
 	private char[][] charGrid;
 	private int[] shipDirections;
 	private ArrayList<java.awt.Point> occupied;
-	private JPanel gridPane, fade;
+	private JPanel gridPane, fade, controls;
 	private JLabel doneButton;
 	private JLabel[][] grid;
 	private BufferedImage[] shipSprites, waterSprites;
@@ -41,8 +42,6 @@ public class GridPanel extends JPanel implements MouseListener, KeyListener {
 	private ShipPanel selectedShip;
 	private ArrayList<WaterPanel> waterArray;
 	private SettingsPanel settings;
-
-	// ----------------------------------------------------
 
 	public GridPanel(float volume) {
 		super();
@@ -70,7 +69,7 @@ public class GridPanel extends JPanel implements MouseListener, KeyListener {
 		this.add(fade);
 		
 		doneButton = new JLabel("Done");
-		doneButton.setFont(new Font("impact", Font.PLAIN, 30));
+		doneButton.setFont(new Font("impact", Font.PLAIN, 40));
 		doneButton.setBounds(WIDTH * 5 / 6, HEIGHT * 2 / 3, 100, 100);
 		doneButton.setForeground(Color.white);
 		doneButton.setName("Done");
@@ -85,6 +84,8 @@ public class GridPanel extends JPanel implements MouseListener, KeyListener {
 		ships = new ShipPanel[5];
 		waterArray = new ArrayList<>();
 		settings = new SettingsPanel(volume);
+		
+		this.initiateControlsPanel();
 	}
 	
 	// -- Start of Getters and Setters --
@@ -318,6 +319,69 @@ public class GridPanel extends JPanel implements MouseListener, KeyListener {
 	// -- End of Settings Configurations -- 
 	
 	// -- Start of Foreground Configuration --
+	public void initiateControlsPanel() {
+		controls = new JPanel();
+		controls.setLayout(new GridLayout(2, 1));
+		controls.setBounds(WIDTH/2 + CELLSIZE * 6,  GRIDY + CELLSIZE, 300, HEIGHT/4);
+		controls.setBackground(new Color(0, 0, 0, 0));
+		this.add(controls);
+		
+		JPanel firstControl = new JPanel();
+		firstControl.setLayout(null);
+		firstControl.setBackground(new Color(0, 0, 0, 0));
+		JPanel secondControl = new JPanel();
+		secondControl.setLayout(null);
+		secondControl.setBackground(new Color(0, 0, 0, 0));
+		
+		JLabel dragAndDrop = new JLabel("Drag and Drop: ", JLabel.CENTER);
+		dragAndDrop.setFont(messageFont);
+		dragAndDrop.setBounds(10, 10, 150, 50);
+		dragAndDrop.setForeground(Color.white);
+		firstControl.add(dragAndDrop);
+		
+		JLabel mouse1Control = new JLabel("M1", JLabel.CENTER);
+		mouse1Control.setBorder(new LineBorder(Color.white, 2));
+		mouse1Control.setForeground(Color.white);
+		mouse1Control.setFont(messageFont);
+		mouse1Control.setBounds(170, 10, 45, 45);
+		firstControl.add(mouse1Control);
+		
+		JLabel plusDrag = new JLabel("+ DRAG", JLabel.CENTER);
+		plusDrag.setForeground(Color.white);
+		plusDrag.setFont(messageFont);
+		plusDrag.setBounds(215, 10, 75, 50);
+		firstControl.add(plusDrag);
+		
+		JLabel rotate = new JLabel("Rotate: ", JLabel.CENTER);
+		rotate.setFont(messageFont);
+		rotate.setBounds(10, 10, 100, 50);
+		rotate.setForeground(Color.white);
+		secondControl.add(rotate);
+		
+		JLabel mouse1ControlC = new JLabel("M1", JLabel.CENTER);
+		mouse1ControlC.setBorder(new LineBorder(Color.white, 2));
+		mouse1ControlC.setForeground(Color.white);
+		mouse1ControlC.setFont(messageFont);
+		mouse1ControlC.setBounds(120, 10, 45, 45);
+		secondControl.add(mouse1ControlC);
+		
+		JLabel plus = new JLabel(" + ", JLabel.CENTER);
+		plus.setForeground(Color.white);
+		plus.setFont(messageFont);
+		plus.setBounds(170, 10, 50, 50);
+		secondControl.add(plus);
+		
+		JLabel rControl = new JLabel("R", JLabel.CENTER);
+		rControl.setBorder(new LineBorder(Color.white, 2));
+		rControl.setForeground(Color.white);
+		rControl.setFont(messageFont);
+		rControl.setBounds(225, 10, 45, 45);
+		secondControl.add(rControl);
+		
+		
+		controls.add(firstControl);
+		controls.add(secondControl);
+	}
 	public void buildShips() {
 		ShipPanel ship1 = createShip(10, 10, 5, 'K');
 		ShipPanel ship2 = createShip(10 + CELLSIZE, 10, 4, 'B');

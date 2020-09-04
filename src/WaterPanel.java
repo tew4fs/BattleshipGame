@@ -8,8 +8,7 @@ public class WaterPanel extends JPanel {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private BufferedImage i;
-	private BufferedImage water0, water1, water2, water3, water4, water5, water6, water7, water8, water9, island0;
+	private BufferedImage i, water0, water1, water2, water3, water4, water5, water6, water7, water8, water9, island0;
 
 
 	public WaterPanel(BufferedImage[] waterSprites) {

@@ -10,17 +10,17 @@ public class ShipPanel extends JPanel {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	//private final int HEIGHT = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight(); // Height of the screen
-	private final int WIDTH = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth(); // Width of the screen
+	private final int WIDTH = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
 	private final int GRIDWIDTH = WIDTH * 4 / 9;
 	private final int CELLSIZE = GRIDWIDTH/11;
 	
-	private int direction = 0;
+	private int direction;
 	private char type;
-	private BufferedImage i;
-	private BufferedImage carrier0, carrier1, carrier2, carrier3, battleship0, battleship1, battleship2, battleship3, cruiser0, cruiser1, cruiser2, cruiser3, submarine0, submarine1, submarine2, submarine3, destroyer0, destroyer1, destroyer2, destroyer3;
+	private BufferedImage i, carrier0, carrier1, carrier2, carrier3, battleship0, battleship1, battleship2, battleship3, cruiser0, cruiser1, cruiser2, cruiser3, submarine0, submarine1, submarine2, submarine3, destroyer0, destroyer1, destroyer2, destroyer3;
 
 	public ShipPanel(char type, BufferedImage[] shipSprites) {
+		direction = 0;
+		
 		carrier0 = shipSprites[0];
 		carrier1 = shipSprites[1];
 		carrier2 = shipSprites[2];

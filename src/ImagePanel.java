@@ -11,10 +11,10 @@ public class ImagePanel extends JPanel {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private int direction = 0;
-	private Image i;
-	private Image hitMarker, missMarker;
+	private int direction;
+	private Image i, hitMarker, missMarker;
 	public ImagePanel(char type) {
+		direction = 0;
 		// ====== Start of Loading Images ======
 		try {
 			DataInputStream datainputstream = new DataInputStream(
