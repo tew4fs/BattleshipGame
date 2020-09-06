@@ -1,3 +1,4 @@
+import java.awt.Toolkit;
 import java.util.ArrayList;
 public class AI {
 	private boolean randomGuess, afterFirstHit, afterSecondHit, afterThirdHit, afterFourthHit;
@@ -912,20 +913,4 @@ public class AI {
 		}
 		return true;
 	}
-	
-	/*public static void main(String [] args) {
-		Scanner reader = new Scanner(System.in);
-		AIBoard board = new AIBoard();
-		PlayerBoard a = new PlayerBoard(board.getBoard());
-		AI ai = new AI(a);
-		long start = System.currentTimeMillis();
-		while(!a.checkIfLost()) {
-			while(!ai.guess()) {
-			}
-			System.out.println(ai.playerBoard);
-			//reader.nextLine();
-		}
-		long end = System.currentTimeMillis();
-		System.out.println("Time: " + (end - start));
-	}*/
 }

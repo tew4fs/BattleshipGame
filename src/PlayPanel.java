@@ -1,7 +1,6 @@
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
-import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -20,8 +19,8 @@ public class PlayPanel extends JPanel implements MouseListener, KeyListener {
 	 */
 	private static final long serialVersionUID = 1L;
 	private final PlayPanel PP = this;
-	private final int HEIGHT = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
-	private final int WIDTH = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
+	private final int WIDTH = 1280;
+	private final int HEIGHT = 720;
 	private final int GRIDWIDTH = WIDTH * 4 / 9;
 	private final int GRIDX = WIDTH/4 - GRIDWIDTH/2;
 	private final int COMPUTERGRIDX = 3*WIDTH/4 - GRIDWIDTH/2;

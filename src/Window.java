@@ -13,8 +13,8 @@ public class Window extends JPanel {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private final int WIDTH = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
-	private final int HEIGHT = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
+	private final int WIDTH = 1280;
+	private final int HEIGHT = 720;
 	private final boolean ANIMATION = true;
 
 	private boolean onStartScreen, onShipSelectionScreen, onPlayScreen, initHomeScreen, initSelectionScreen, initPlayScreen;
@@ -290,6 +290,7 @@ public class Window extends JPanel {
 		int WIDTH = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
 		int HEIGHT = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
 		JFrame frame = new JFrame("Battleship");
+		frame.setResizable(false);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setBounds(0, 0, WIDTH, HEIGHT);
 		Window window = new Window();

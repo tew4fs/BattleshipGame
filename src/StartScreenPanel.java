@@ -1,6 +1,5 @@
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -20,8 +19,8 @@ public class StartScreenPanel extends JPanel implements MouseListener{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private final int HEIGHT = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
-	private final int WIDTH = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
+	private final int WIDTH = 1280;
+	private final int HEIGHT = 720;
 	private final int GRIDWIDTH = WIDTH * 4 / 9;
 	private final int CELLSIZE = GRIDWIDTH / 11;
 	private final int SHOTSTARTX = WIDTH / 3 - CELLSIZE;
@@ -238,7 +237,7 @@ public class StartScreenPanel extends JPanel implements MouseListener{
 		explosions[8].setBounds(CRUISERX+9, CRUISERY + CELLSIZE + 20, 25, 25);
 		explosions[9].setBounds(CRUISERX+24, CRUISERY + CELLSIZE - 3, 25, 25);
 		
-		Timer timer = new Timer(1, null);
+		Timer timer = new Timer(5, null);
 		timer.addActionListener(new ActionListener() {
 			int gravity = 1;
 			int Vy_0 = 5;

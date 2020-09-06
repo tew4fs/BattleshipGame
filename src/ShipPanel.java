@@ -1,6 +1,5 @@
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.Toolkit;
 import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
 import javax.swing.JPanel;
@@ -10,7 +9,7 @@ public class ShipPanel extends JPanel {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private final int WIDTH = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
+	private final int WIDTH = 1280;
 	private final int GRIDWIDTH = WIDTH * 4 / 9;
 	private final int CELLSIZE = GRIDWIDTH/11;
 	

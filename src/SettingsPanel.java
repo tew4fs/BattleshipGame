@@ -1,7 +1,6 @@
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
-import java.awt.Toolkit;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -22,8 +21,8 @@ public class SettingsPanel extends JPanel implements MouseListener{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private final int HEIGHT = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
-	private final int WIDTH = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
+	private final int WIDTH = 1280;
+	private final int HEIGHT = 720;
 	
 	private boolean leave, returnToMenu;
     private float volume;
