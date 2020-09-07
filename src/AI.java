@@ -1,4 +1,3 @@
-import java.awt.Toolkit;
 import java.util.ArrayList;
 public class AI {
 	private boolean randomGuess, afterFirstHit, afterSecondHit, afterThirdHit, afterFourthHit;
