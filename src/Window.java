@@ -289,7 +289,7 @@ public class Window extends JPanel {
 	public static void main(String[] args) {
 		int WIDTH = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
 		int HEIGHT = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
-		JFrame frame = new JFrame("Battleship");
+		JFrame frame = new JFrame("Naval Fight");
 		frame.setResizable(false);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setBounds(0, 0, WIDTH, HEIGHT);

@@ -179,7 +179,7 @@ public class StartScreenPanel extends JPanel implements MouseListener{
 		shadow.setVisible(false);
 		this.add(shadow);
 		
-		JLabel title = new JLabel("BATTLESHIP", JLabel.CENTER);
+		JLabel title = new JLabel("NAVAL FIGHT", JLabel.CENTER);
 		title.setFont(new Font("Impact", Font.BOLD, 100));
 		title.setBounds(0, -250, WIDTH, 100);
 		title.setForeground(Color.white);
@@ -328,7 +328,7 @@ public class StartScreenPanel extends JPanel implements MouseListener{
 	}
 	
 	public void createMenu() {
-		JLabel title = new JLabel("BATTLESHIP", JLabel.CENTER);
+		JLabel title = new JLabel("NAVAL FIGHT", JLabel.CENTER);
 		title.setFont(new Font("Impact", Font.BOLD, 100));
 		title.setBounds(0, HEIGHT/4 - 75, WIDTH, 100);
 		title.setForeground(Color.white);
